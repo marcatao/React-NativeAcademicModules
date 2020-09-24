@@ -5,8 +5,8 @@ import {
         ScrollView,
         Dimensions,
         StyleSheet, FlatList} from 'react-native'
-import Cabecalho from './src/Components/Cabecalho';
-
+import {Cabecalho} from './src/Components/Cabecalho';
+import {Foto} from './src/Components/Foto'
  
 const largura = Dimensions.get("screen").width;
 const dados = [
@@ -23,28 +23,13 @@ const App = ()  => {
         keyExtractor={(item) => item.id.toString()}
         renderItem={({item})=>
           <Fragment>
-              <Cabecalho nomeUsuario={item.usuario}/>
-              <Image 
-                 source={require("./res/img/alura.jpg")} 
-                  style={style.image}/>
-          </Fragment>
-        }
-      />
-
-     
+              <Cabecalho nomeUsuario={item.usuario} />
+              <Foto />
+          </Fragment>}
+        />
     </ScrollView>
   );
 };
 
-const style =  StyleSheet.create({
-  image:{
-    width: largura,
-    height: largura,
-    padding:15,
-  },
-  nome:{
-    fontSize:15
-  }
-})
 
 export default App;
