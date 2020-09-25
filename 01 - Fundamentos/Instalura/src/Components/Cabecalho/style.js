@@ -10,8 +10,11 @@ const style = StyleSheet.create({
     cabecalho:{
         flexDirection:"row",
         alignItems:"center",
-
     },
+    textoNomeUsuario:{
+        fontSize:20,
+        
+    }
 })
 
 export default style;

@@ -5,14 +5,14 @@ import style from './style';
 
 
 
-const Foto = ()  => {
+const Foto = ({pictureURL,description})  => {
   return (
       <Fragment>
           <Image 
-            source={require("../../../res/img/alura.jpg")} 
+            source={{uri: pictureURL}} 
             style={style.image}
          />
-         <Text>Descricao da foto </Text>
+         <Text>{description}</Text>
         </Fragment>
   );
 };

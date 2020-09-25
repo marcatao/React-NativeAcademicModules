@@ -8,14 +8,14 @@ import {
 
 import style from './style';
 
-const Cabecalho = ({nomeUsuario}) =>{
+const Cabecalho = ({nomeUsuario, userURL}) =>{
     return (
     <View style={style.cabecalho}>
         <Image 
-            source={require("../../../res/img/alura.jpg")}
+            source={{uri: userURL}}
             style={style.fotoUsuario}
         />
-        <Text>{nomeUsuario}...</Text>
+        <Text style={style.textoNomeUsuario}>{nomeUsuario}</Text>
     </View>
     );
 }
