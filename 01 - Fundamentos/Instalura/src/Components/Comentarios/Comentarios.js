@@ -4,20 +4,14 @@ import {FlatList, Text, TextInput, View, Image, TouchableOpacity} from 'react-na
 
 import style from './style';
 
-const Comentarios = ({comentarios}) => {
+const Comentarios = ({comentarios, adicionarComentario}) => {
     const [estComentario, setEstComentario] = useState(comentarios);
-    const adicionaComentario = () =>{
-        console.warn(conteudoCampoInput);
+    const comentar = () =>{
         campoInput.clear();
-
-        const novoComentario = {
-            date: Date.now(),
-            text: conteudoCampoInput,
-            userName: "pauloscalercioalura"
-        }
+        const novoComentario = adicionarComentario(conteudoCampoInput,'marcato');
         setEstComentario([...estComentario, novoComentario]);
-        
     }
+    
     let campoInput;
     let conteudoCampoInput = '';
 
@@ -35,7 +29,7 @@ const Comentarios = ({comentarios}) => {
                ref={textInput => campoInput = textInput}
                onChangeText={texto => conteudoCampoInput=texto }
                placeholder={"Comentar..."} style={style.inputComentario}/>
-            <TouchableOpacity onPress={adicionaComentario}>
+            <TouchableOpacity onPress={comentar}>
                 <Image source={require("../../../res/img/send.png")} style={style.imgSend} />
             </TouchableOpacity>
         </View>
